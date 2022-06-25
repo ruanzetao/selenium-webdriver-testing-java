@@ -27,15 +27,17 @@ public class Topic_03_XPath_Part_I {
 	@Test
 	public void Register_01_Empty_Data() {
 		driver.get("https://alada.vn/tai-khoan/dang-ky.html");
-		driver.manage().timeouts().implicitlyWait(2000, TimeUnit.SECONDS);
+		//driver.manage().timeouts().implicitlyWait(2000, TimeUnit.SECONDS);
+		//Hide pop-up Messenger
+		System.out.println("Helllll!!!");
 		// Action
-		driver.findElement(By.id("txtFirstName")).sendKeys("");
+		driver.findElement(By.id("txtFirstname")).sendKeys("");
 		driver.findElement(By.id("txtEmail")).sendKeys("");
 		driver.findElement(By.id("txtCEmail")).sendKeys("");
 		driver.findElement(By.id("txtPassword")).sendKeys("");
 		driver.findElement(By.id("txtCPassword")).sendKeys("");
 		driver.findElement(By.id("txtPhone")).sendKeys("");
-		driver.findElement(By.xpath("//formp[@id='frmLogin']//button[text()='ĐĂNG KÝ']")).click();
+		driver.findElement(By.xpath("//form[@id='frmLogin']//button[text()='ĐĂNG KÝ']")).click();
 		// Verify something
 		Assert.assertEquals(driver.findElement(By.id("txtFirstname-error")).getText(),"Vui lòng nhập họ tên");
 	}
