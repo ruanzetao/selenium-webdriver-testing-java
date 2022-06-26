@@ -123,7 +123,7 @@ public class Topic_03_XPath_Part_I {
 		driver.findElement(By.id("txtEmail")).sendKeys("ruanzetao@gmail.com");
 		driver.findElement(By.id("txtCEmail")).sendKeys("ruanzetao@gmail.com");
 		driver.findElement(By.id("txtPassword")).sendKeys("12345678");
-		driver.findElement(By.id("txtCPassword")).sendKeys("12345778");
+		driver.findElement(By.id("txtCPassword")).sendKeys("12345678");
 		driver.findElement(By.id("txtPhone")).sendKeys("09326587");
 		driver.findElement(By.xpath("//form[@id='frmLogin']//button[text()='ĐĂNG KÝ']")).click();
 
