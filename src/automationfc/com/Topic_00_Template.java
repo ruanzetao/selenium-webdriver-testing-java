@@ -42,31 +42,31 @@ public class Topic_00_Template {
 	}
 
 	@Test
-	public void Register_02_Invalid_Email() {
+	public void TC_02_() {
 		driver.get("https://alada.vn/tai-khoan/dang-ky.html");
 
 	}
 //
 //	@Test
-//	public void Register_03_Incorrect_Email() {
+//	public void TC_03_() {
 //		driver.get("https://alada.vn/tai-khoan/dang-ky.html");
 //
 //	}
 //
 //	@Test
-//	public void Register_04_Password_Less_Than_6() {
+//	public void TC_04_() {
 //		driver.get("https://alada.vn/tai-khoan/dang-ky.html");
 //
 //	}
 //
 //	@Test
-//	public void Register_05_Incorrect_Confirm_Password() {
+//	public void TC_05_() {
 //		driver.get("https://alada.vn/tai-khoan/dang-ky.html");
 //
 //	}
 //
 //	@Test
-//	public void Register_06_Invalid_Phone_Number() {
+//	public void TC_06_() {
 //		driver.get("https://alada.vn/tai-khoan/dang-ky.html");
 //
 //	}
