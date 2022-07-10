@@ -73,9 +73,16 @@ public class Topic_13_Alert {
 	}
 
 	@Test
-	public void TC_04_Authentication_Alert() {
-		driver.get("http://the-internet.herokuapp.com/basic_auth");
-		
+	public void TC_04_Authentication_Alert_Trick() {
+		String username ="admin";
+		String password="admin";
+		String url="http://"+username+":"+password+"@"+"the-internet.herokuapp.com/basic_auth";
+		driver.get(url);
+		//So sanh du lieu gon
+		Assert.assertEquals(driver.findElement(By.cssSelector("div#content p")), "Congratulations! You must have the proper credentials");
+		//So sanh du lieu khong gon
+		String contentText=driver.findElement(By.cssSelector("div#content p")).getText();
+		Assert.assertTrue(contentText.contains("Congratulations! You must have the proper credentials"));
 
 	}
 //
