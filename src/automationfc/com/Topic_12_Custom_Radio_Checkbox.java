@@ -10,7 +10,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class Topic_00_Template {
+public class Topic_12_Custom_Radio_Checkbox {
 	WebDriver driver;
 	String projectPath = System.getProperty("user.dir");
 	
@@ -27,13 +27,15 @@ public class Topic_00_Template {
 	}
 
 	@Test
-	public void TC_01_() {
-		driver.get("https://alada.vn/tai-khoan/dang-ky.html");
-		//Find element
+	public void TC_01_Custom_Checkbox() {
+		driver.get("https://material.angular.io/components/checkbox/overview");
+		// Find Element
+		driver.findElement(By.xpath("//span[text()='Checked']/preceding-sibling::span/input")).click();
+		
 	}
 
 	@Test
-	public void TC_02_() {
+	public void TC_02_Custom_Radio() {
 		driver.get("https://alada.vn/tai-khoan/dang-ky.html");
 
 	}
