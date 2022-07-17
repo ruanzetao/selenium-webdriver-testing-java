@@ -10,7 +10,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class Topic_00_Template {
+public class Topic_18_JavaScript_Executor_Exercise {
 	WebDriver driver;
 	String projectPath = System.getProperty("user.dir");
 	

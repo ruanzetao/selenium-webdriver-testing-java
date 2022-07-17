@@ -10,7 +10,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class Topic_00_Template {
+public class Topic_16_Frame_iFrame {
 	WebDriver driver;
 	String projectPath = System.getProperty("user.dir");
 	
@@ -28,15 +28,24 @@ public class Topic_00_Template {
 
 	@Test
 	public void TC_01_() {
-		driver.get("https://alada.vn/tai-khoan/dang-ky.html");
+		
+		driver.get("https://kyna.vn");
 		//Find element
+		//WebElement : all case
+		//A=>B
+		driver.switchTo().frame(driver.findElement(By.cssSelector("div.fanpage iframe")));
+		String facebookLikeNumber=driver
+				.findElement(By.xpath("//a[text()='Kyna.vn']/parent::div/following-sibling::div")).getText();
+		Assert.assertEquals(facebookLikeNumber, "166K likes");
+		//B=>A
+		driver.switchTo().defaultContent();
 	}
 
-//	@Test
-//	public void TC_02_() {
-//		driver.get("https://alada.vn/tai-khoan/dang-ky.html");
-//
-//	}
+	@Test
+	public void TC_02_() {
+		driver.get("https://alada.vn/tai-khoan/dang-ky.html");
+
+	}
 //
 //	@Test
 //	public void TC_03_() {
