@@ -5,5 +5,10 @@ public class Topic_03_Random {
 		Random rand=new Random();
 		rand.nextInt(99);
 	}
+	
+	public int generateRandomNumber() {
+		Random rand = new Random();
+		return rand.nextInt(99999);
+	}
 
 }

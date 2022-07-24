@@ -152,6 +152,25 @@ public class Topic_18_JavaScript_Executor {
 		return driver.findElement(By.xpath(locator));
 	}
 
+
+	public int generateRandomNumber() {
+		Random rand = new Random();
+		return rand.nextInt(99999);
+	}
+
+	public void sleepInSecond(long timeInSecond) {
+		try {
+			Thread.sleep(timeInSecond * 100);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+
+	@AfterClass
+	public void afterClass() {
+		driver.quit();
+	}
+	
 //	@Test
 //	public void TC_02_Rode() {
 //		driver.get("https://alada.vn/tai-khoan/dang-ky.html");
@@ -181,21 +200,4 @@ public class Topic_18_JavaScript_Executor {
 //		driver.get("https://alada.vn/tai-khoan/dang-ky.html");
 //
 //	}
-	public int generateRandomNumber() {
-		Random rand = new Random();
-		return rand.nextInt(99999);
-	}
-
-	public void sleepInSecond(long timeInSecond) {
-		try {
-			Thread.sleep(timeInSecond * 100);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-	}
-
-	@AfterClass
-	public void afterClass() {
-		driver.quit();
-	}
 }
