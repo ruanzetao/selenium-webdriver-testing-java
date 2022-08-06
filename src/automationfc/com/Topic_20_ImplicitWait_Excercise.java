@@ -7,11 +7,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class Topic_20_Wait_P2_FindElement_FindElements {
+public class Topic_20_ImplicitWait_Excercise {
 	WebDriver driver;
 	String projectPath = System.getProperty("user.dir");
 
@@ -21,26 +22,22 @@ public class Topic_20_Wait_P2_FindElement_FindElements {
 
 		System.setProperty("webdriver.gecko.driver", projectPath + "\\browserDrivers\\geckodriver.exe");
 		driver = new FirefoxDriver();
-		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		driver.get("https://automationfc.github.io/dynamic-loading/");
 		driver.manage().window().maximize();
 
 	}
 
 	@Test
-	public void TC_01_Find_Element() {
+	public void TC_01_ImplicitWait() {
 //		driver.get("https://alada.vn/tai-khoan/dang-ky.html");
 		// Visible: Co tren UI va co trong DOM
-		System.out.println("Start date:"+getCurrentTime());
-		driver.findElement(By.xpath("//input[@id='email']"));
-		System.out.println("End date:"+getCurrentTime());
 
-	}
-
-	@Test
-	public void TC_02_Find_Elements() {
-		//driver.get("https://alada.vn/tai-khoan/dang-ky.html");
-		driver.findElement(By.xpath("//div[@id='pageFooterChildren']/a[text()]")).click();
+		driver.findElement(By.xpath("//button[text()='Start']")).click();
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+		Assert.assertTrue(driver.findElement(By.xpath("//h4[text()='Hello World!']")).isDisplayed());
+		
 	}
 //
 //	@Test
@@ -74,12 +71,11 @@ public class Topic_20_Wait_P2_FindElement_FindElements {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public String getCurrentTime() {
-		Date date= new Date();
+		Date date = new Date();
 		return date.toString();
 	}
-
 
 	@AfterClass
 	public void afterClass() {
